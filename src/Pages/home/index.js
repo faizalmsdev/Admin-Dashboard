@@ -1,9 +1,14 @@
 import React from 'react';
+import Layout from "../../Layout/index"
 
 const index = () => {
     return (
         <div>
-            This is Home
+            <Layout>
+                <div className="m-6">
+                    Checking
+                </div>
+            </Layout>
         </div>
     )
 }

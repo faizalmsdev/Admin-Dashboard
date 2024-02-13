@@ -1,14 +1,22 @@
 import React, { Children } from 'react'
 import Header from '../Components/TB/Header';
 import Footer from '../Components/TB/Footer';
-import navLinks from '../Functions/navlinks';
 
-const index = () => {
+const index = ({children}) => {
     return (
         <div>
-            <Header navLinks= {navLinks} />
-                {Children}
-            <Footer />
+            <Header />
+            <div className='flex '>
+                <div className=''>
+                    <Footer />
+                </div>
+                <div className=''>
+                    {children}
+                </div>
+            </div>
+                
+                
+            
         </div>
     )
 }
