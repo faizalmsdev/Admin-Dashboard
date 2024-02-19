@@ -1,0 +1,23 @@
+.header{
+    background: whitesmoke;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height:12vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.footer-middle{
+    font-size: 30px;
+}
+
+.footer-right input{
+    border-radius: 10px;
+    width:250px;
+    height:40px;
+    padding:10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
