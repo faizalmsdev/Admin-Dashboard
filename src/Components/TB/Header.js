@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => {
     return (
-        <div className='bg-slate-700 h-[10vh]'>
+        <div className='bg-secondary text-primary h-[10vh]'>
             this is Header [render navLinks according to preference]
         </div>
     )
