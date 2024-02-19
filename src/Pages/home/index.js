@@ -1,12 +1,13 @@
 import React from 'react';
 import Layout from "../../Layout/index"
+import AddProducts from '../../Layers/AddProducts';
 
 const index = () => {
     return (
-        <div>
+        <div className='bg-primary overflow-x-hidden'>
             <Layout>
                 <div className="m-6">
-                    Checking
+                    <AddProducts />
                 </div>
             </Layout>
         </div>

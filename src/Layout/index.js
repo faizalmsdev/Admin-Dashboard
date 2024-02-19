@@ -4,20 +4,20 @@ import Footer from '../Components/TB/Footer';
 
 const index = ({children}) => {
     return (
-        <div>
+        <>
             <Header />
             <div className='flex '>
-                <div className=''>
+                <div className='w-[15%]'>
                     <Footer />
                 </div>
-                <div className=''>
+                <div className='w-[85%]'>
                     {children}
                 </div>
             </div>
                 
                 
             
-        </div>
+        </>
     )
 }
 
