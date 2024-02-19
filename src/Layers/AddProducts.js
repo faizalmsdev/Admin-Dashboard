@@ -34,7 +34,7 @@ const AddProducts = () => {
             }
     
             // Send formData to backend
-            const response = await fetch('http://localhost:3000/api/v1/menu', {
+            const response = await fetch('https://karaikudi-kitchen-backend.onrender.com/api/v1/menu', {
                 method: 'POST',
                 body: formData,
             });
