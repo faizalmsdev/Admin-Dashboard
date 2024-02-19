@@ -168,7 +168,7 @@ const AddProducts = () => {
                            
                             
                             <Form.Item >
-                                <Button type="primary" htmlType="submit">
+                                <Button  htmlType="submit" className='bg-text text-zinc-300 font-semibold'>
                                     Submit
                                 </Button>
                             </Form.Item>
