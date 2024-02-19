@@ -10,6 +10,7 @@ const AddProducts = () => {
     const [showDiscountPrice, setShowDiscountPrice] = useState(false);
 
     const onFinish = async (values) => {
+        let success = false;
         try {
             const formData = new FormData();
             formData.append('dish_name', values.dish_name);
@@ -46,9 +47,14 @@ const AddProducts = () => {
             const responseData = await response.json();
             console.log('Response:', responseData);
             message.success('Data uploaded successfully');
+            success = true; // Set success flag to true after successful submission
         } catch (error) {
             console.error('Error:', error.message);
             message.error('Failed to upload data');
+        } finally {
+            if (success) {
+                form.resetFields(); // Reset form fields only if data submission was successful
+            }
         }
     };
     
