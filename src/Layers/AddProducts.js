@@ -65,17 +65,17 @@ const AddProducts = () => {
         <div className=''>
             <Container>
                 <div className='w-[80%] ml-5'>
-                    <h1 className='text-text font-semibold  text-4xl'>Welcome chief!</h1>
+                    <h1 className='text-text font-semibold  text-4xl flex justify-center'>Welcome chief!</h1>
                     <div className='m-6 mt-12 font-medium text-text '>
                         <Form
                             form={form}
                             layout="vertical"
                             onFinish={onFinish}
                         >
-                        <div className='flex justify-around'>
-                            <div>
+                        <div className='flex justify-between'>
+                            <div className='w-[50%]'>
                                 <Form.Item
-                                    label="Dish Name"
+                                    label="Dish Name:"
                                     name="dish_name"
                                     rules={[
                                         { required: true, message: 'Please input the dish name!' },
@@ -116,7 +116,7 @@ const AddProducts = () => {
                                     </Radio.Group>
                                 </Form.Item>
                             </div>
-                            <div>
+                            <div className='w-[50%]'>
                                 <Form.Item
                                     label="Category"
                                     name="category"
