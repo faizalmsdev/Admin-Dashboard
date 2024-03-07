@@ -18,9 +18,9 @@ const AddProducts = () => {
             formData.append('description', values.description);
             formData.append('vg_category', values.vg_category);
             formData.append('category', values.category);
-            formData.append('discountAvailable', values.discountAvailable);
-            if (values.discountAvailable) {
-                formData.append('discountPrice', values.discountPrice);
+            formData.append('discount_price_available', values.discount_price_available);
+            if (values.discount_price_available) {
+                formData.append('discount_price', values.discount_price);
             }
             
             // Check if images is an array
@@ -57,7 +57,12 @@ const AddProducts = () => {
             }
         }
     };
-    
+    // Update form values when the checkbox state changes
+    const handleCheckboxChange = (e) => {
+        setShowDiscountPrice(e.target.checked);
+        form.setFieldsValue({ discount_price_available: e.target.checked });
+    };
+
 
 
 
@@ -133,17 +138,17 @@ const AddProducts = () => {
                                 </Form.Item>
                                 <Form.Item
                                     label=""
-                                    name="discountAvailable"
+                                    name="discount_price_available"
                                     valuePropName="checked"
                                 >
-                                    <Checkbox onChange={(e) => setShowDiscountPrice(e.target.checked)}>
+                                    <Checkbox onChange={handleCheckboxChange}>
                                         Check if discount price available
                                     </Checkbox>
                                 </Form.Item>
                                 {showDiscountPrice && (
                                     <Form.Item
                                         label="Discount Price"
-                                        name="discountPrice"
+                                        name="discount_price"
                                         rules={[
                                             { required: true, message: 'Please input the discount price!' }
                                         ]}
