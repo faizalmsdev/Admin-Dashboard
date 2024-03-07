@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.row-with-space {
+    margin-bottom: 6px; /* Adjust the value as needed to add more or less space */
+    margin-top: 6px; /* Adjust the value as needed to add more or less space */
+}

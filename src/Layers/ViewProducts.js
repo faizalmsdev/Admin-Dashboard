@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { DataGrid } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
+import "../../src/App.css"
 
 const ViewProducts = () => {
   const [data, setData] = useState([]);
@@ -33,11 +34,23 @@ const ViewProducts = () => {
     { field: 'description', headerName: 'Description', width: 250 },
     { field: 'vg_category', headerName: 'Veg/Non-Veg', width: 150 },
     { field: 'category', headerName: 'Category', width: 150 },
-    { field: 'images', headerName: 'Image', width: 200 },
+    { 
+      field: 'images', 
+      headerName: 'Image', 
+      width: 100,
+      renderCell: (params) => (
+        <img src={params.value} alt="Product" style={{ width: '100%', height: 'auto' }} />
+      )
+    },
   ];
 
+  const getRowClassName = (params) => {
+    return 'row-with-space';
+  };
+  
+
   return (
-    <div className="datatable">
+    <div className="datatable h-[80vh]">
       <div className="datatableTitle">
         View Products
         <Link to="/users/new" className="link">
@@ -48,6 +61,7 @@ const ViewProducts = () => {
         className="datagrid"
         rows={data}
         columns={columns}
+        getRowClassName={getRowClassName}
       />
     </div>
   );
