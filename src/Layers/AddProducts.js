@@ -150,7 +150,7 @@ const AddProducts = () => {
                                         label="Discount Price"
                                         name="discount_price"
                                         rules={[
-                                            { required: true, message: 'Please input the discount price!' }
+                                            {  message: 'Please input the discount price!' }
                                         ]}
                                     >
                                         <Input type="number" placeholder="Input discount price" style={{ width: '250px' , borderRadius: '5px' , marginLeft : "2rem" } } />
