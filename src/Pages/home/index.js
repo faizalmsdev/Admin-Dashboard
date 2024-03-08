@@ -16,7 +16,7 @@ const Index = () => {
     return (
         <div className='bg-primary overflow-x-hidden'>
             <Layout handleTabChange={handleTabChange}>
-                <div className="m-6">
+                <div className="my-6 ml-4">
                     {/* Conditional rendering based on activeTab */}
                     {activeTab === 'add' && <AddProducts />}
                     {activeTab === 'view' && <ViewProducts />}

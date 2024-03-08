@@ -7,10 +7,10 @@ const index = ({children , handleTabChange}) => {
         <>
             <Header />
             <div className='flex '>
-                <div className='w-[15%]'>
+                <div className='w-[13%]'>
                     <Footer handleTabChange={handleTabChange} />
                 </div>
-                <div className='w-[85%]'>
+                <div className='w-[87%]'>
                     {children}
                 </div>
             </div>

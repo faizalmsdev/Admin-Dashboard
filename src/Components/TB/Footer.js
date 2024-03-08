@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = ({ handleTabChange }) => {
     return (
-        <div className='footer h-[96vh]  w-[10rem] bg-secondary'>
+        <div className='footer h-[96vh]  w-full bg-secondary'>
             <div className="element text-primary">
                 {/* onClick handlers to change active tab */}
                 <Link href='' onClick={() => handleTabChange('view')}>View Products</Link>

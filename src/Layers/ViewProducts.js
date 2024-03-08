@@ -51,12 +51,16 @@ const ViewProducts = () => {
 
   return (
     <div className="datatable h-[80vh]">
-      <div className="datatableTitle">
-        View Products
-        <Link to="/users/new" className="link">
+      <div className="datatableTitle font-semibold text-heading text-xl">
+        All Products
+        
+      </div>
+      <div className=' flex justify-end'>
+      <Link to="/users/new" className="link mx-2 px-2 mb-3 rounded-md hover:bg-green-400 bg-green-500 text-[#f5f5f5]">
           Add New
         </Link>
       </div>
+      
       <DataGrid
         className="datagrid"
         rows={data}
