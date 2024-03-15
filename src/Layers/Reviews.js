@@ -9,10 +9,9 @@ const Reviews = () => {
       try {
         const response = await fetch(process.env.REACT_APP_API_URL + process.env.REACT_APP_API_REVIEW);
         const data = await response.json();
-        // console.log("data", data.data.review)
         setReviews(data.data.review);
       } catch (error) {
-        console.error('Error fetching data:', `${process.env.REACT_APP_API_URL}${process.env.REACT_APP_API_REVIEW}`);
+        console.error('Error fetching data:', error);
       }
     };
 

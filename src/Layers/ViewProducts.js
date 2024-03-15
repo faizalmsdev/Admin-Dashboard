@@ -9,7 +9,7 @@ const ViewProducts = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://karaikudi-kitchen-backend.onrender.com/api/v1/menu');
+        const response = await fetch(process.env.REACT_APP_API_URL + process.env.REACT_APP_API_MENU);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
