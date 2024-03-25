@@ -17,7 +17,7 @@ const ManageUsers = () => {
   };
 
   const handleSubmit = () => {
-    fetch('http://localhost:3000/api/v1/users/', {
+    fetch(process.env.REACT_APP_API_URL +  process.env.REACT_APP_API_USERS, {
       method: 'POST',
       body: JSON.stringify(userData),
       headers: {
