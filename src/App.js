@@ -4,14 +4,14 @@ import Home from './Pages/home/index';
 import Contact from './Pages/contactus/Contact';
 import About from './Pages/about/About';
 
-function App() {
+function App({roles}) {
   return (
     <>
       <Routes>
         <Route path='*' element={<Navigate to={"/"} /> } />
-        <Route path="/" element={<Home />} />
-        <Route path='/Contact-us' element={ <Contact /> } />
-        <Route path='/About' element={ <About /> } />
+        <Route path="/" element={<Home roles={roles} />} />
+        {/* <Route path='/Contact-us' element={ <Contact /> } /> */}
+        {/* <Route path='/About' element={ <About /> } /> */}
       </Routes>
     </>
   );
