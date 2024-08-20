@@ -25,6 +25,21 @@ const ViewProducts = () => {
     fetchData();
   }, []); // Empty dependency array means this effect runs only once after the initial render
 
+  const handleDelete = async (id) => {
+    try {
+      const response = await fetch(`https://karaikudi-kitchen-backend.onrender.com/api/v1/menu/${id}`, {
+        method: 'DELETE',
+      });
+      if (response.ok) {
+        setData(data.filter((item) => item._id !== id)); // Update the data state after deletion
+      } else {
+        console.error('Failed to delete the item');
+      }
+    } catch (error) {
+      console.error('Error deleting item:', error);
+    }
+  };
+
   const columns = [
     { field: 'id', headerName: 'ID', width: 100 },
     { field: 'dish_name', headerName: 'Dish Name', width: 200 },
@@ -42,21 +57,32 @@ const ViewProducts = () => {
         <img src={params.value} alt="Product" style={{ width: '100%', height: 'auto' }} />
       )
     },
+    {
+      field: 'actions',
+      headerName: 'Actions',
+      width: 150,
+      renderCell: (params) => (
+        <button
+          onClick={() => handleDelete(params.row._id)}
+          className="text-red-600 hover:text-red-800"
+        >
+          Delete
+        </button>
+      ),
+    },
   ];
 
   const getRowClassName = (params) => {
     return 'row-with-space';
   };
   
-
   return (
     <div className="datatable h-[80vh]">
       <div className="datatableTitle font-semibold text-heading text-xl">
         All Products
-        
       </div>
-      <div className=' flex justify-end'>
-      <Link to="/users/new" className="link mx-2 px-2 mb-3 rounded-md hover:bg-green-400 bg-green-500 text-[#f5f5f5]">
+      <div className='flex justify-end'>
+        <Link to="/users/new" className="link mx-2 px-2 mb-3 rounded-md hover:bg-green-400 bg-green-500 text-[#f5f5f5]">
           Add New
         </Link>
       </div>
